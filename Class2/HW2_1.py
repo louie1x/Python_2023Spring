@@ -2,7 +2,7 @@ from tkinter import *
 # 引入 tkscrolledframe module
 from tkscrolledframe import ScrolledFrame
 root=Tk()
-root.title("Flight Ticket")
+root.title("HW2_1")
 root.geometry("300x100")
 
 # Create scrollframe widget
