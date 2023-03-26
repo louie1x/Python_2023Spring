@@ -164,7 +164,7 @@ def new():
 
     productnumber4=Label(newWindow, text="0", font=("Inter", 12, "bold"), fg="Black", width=7)
     productAddbutton4=Button(newWindow, text="+", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
-    productMinusbutton4=Button(newWindow, text="-", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
+    productMinusbutton4=Button(newWindow, text="-", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber4, productprice4))
     productnumber4.grid(column=7, row=4, sticky=W+E+S+N)
     productAddbutton4.grid(column=7, row=4, sticky=E, padx=(0,35))
     productMinusbutton4.grid(column=7, row=4, sticky=W, padx=(35,0))
@@ -293,7 +293,7 @@ def new2():
 
     productnumber4=Label(newWindow2, text="0", font=("Inter", 12, "bold"), fg="Black", width=7)
     productAddbutton4=Button(newWindow2, text="+", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
-    productMinusbutton4=Button(newWindow2, text="-", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
+    productMinusbutton4=Button(newWindow2, text="-", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber4, productprice4))
     productnumber4.grid(column=7, row=4, sticky=W+E+S+N)
     productAddbutton4.grid(column=7, row=4, sticky=E, padx=(0,35))
     productMinusbutton4.grid(column=7, row=4, sticky=W, padx=(35,0))
@@ -404,7 +404,7 @@ productMinusbutton3.grid(column=5, row=4, sticky=W)
 
 productnumber4=Label(root, text="0", font=("Inter", 12, "bold"), fg="Black", width=7)
 productAddbutton4=Button(root, text="+", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
-productMinusbutton4=Button(root, text="-", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
+productMinusbutton4=Button(root, text="-", font=("Inter", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber4, productprice4))
 productnumber4.grid(column=7, row=4, sticky=W+E+S+N)
 productAddbutton4.grid(column=7, row=4, sticky=E, padx=(0,35))
 productMinusbutton4.grid(column=7, row=4, sticky=W, padx=(35,0))
