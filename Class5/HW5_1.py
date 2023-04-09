@@ -38,4 +38,4 @@ with smtp: # 利用 with 來自動釋放資源
         print("Your Email has been successfully sent")
         smtp.quit()
     except Exception as e:
-        print("Errror message: ", e)
+        print("Error message: ", e)

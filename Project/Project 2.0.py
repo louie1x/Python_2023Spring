@@ -7,7 +7,7 @@ root.title("Forza Horizon Auction House")
 root.geometry("1080x800")
 
 #開啟圖片
-img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/ForzaLogo.png")
+img=Image.open("./Project/Img/ForzaLogo.png")
 #轉換為 tk 圖片物件
 tk_img=ImageTk.PhotoImage(img)
 #設定程式Icon
@@ -17,7 +17,7 @@ root.iconphoto(True, tk_img)
 def new():
     newWindow = Toplevel(root)
     newWindow.geometry("1060x665")
-    img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/ForzaLogo.png")
+    img=Image.open("./Project/Img/ForzaLogo.png")
     resized_logoimg=img.resize((55,55))
     tk_logoimg=ImageTk.PhotoImage(resized_logoimg)
     logolabel=Label(newWindow, image=tk_logoimg)
@@ -42,32 +42,32 @@ def new():
 
 
     #Row 1 Banner
-    img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/S2 Class.png")
+    img=Image.open("./Project/Img/S2 Class.png")
     resized_bannerimg=img.resize((252,298))
     tk_bannerimg=ImageTk.PhotoImage(resized_bannerimg)
     bannerlabel=Label(newWindow, image=tk_bannerimg)
     bannerlabel.grid(column=4, row=1, rowspan=2, columnspan=2, sticky=N+E+S+W)
 
     #Row 2 Car Image
-    img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/RimacConceptTwo.png")
+    img=Image.open("./Project/Img/RimacConceptTwo.png")
     resized_RimacConceptTwoimg=img.resize((222,140))
     RimacConceptTwoimg=ImageTk.PhotoImage(resized_RimacConceptTwoimg)
     RimacConceptTwolabel=Label(newWindow, image=RimacConceptTwoimg, width=202, height=200)
     RimacConceptTwolabel.grid(column=0, row=1, columnspan=4, pady=5, sticky=W)
 
-    img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/MercedesAMGOne.png")
+    img=Image.open("./Project/Img/MercedesAMGOne.png")
     resized_MercedesAMGOneimg=img.resize((202,130))
     MercedesAMGOneimg=ImageTk.PhotoImage(resized_MercedesAMGOneimg)
     MercedesAMGOnelabel=Label(newWindow, image=MercedesAMGOneimg, width=202, height=200)
     MercedesAMGOnelabel.grid(column=0, row=4, columnspan=4, pady=5, sticky=W)
 
-    img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/HennesseyVenomF5.png")
+    img=Image.open("./Project/Img/HennesseyVenomF5.png")
     resized_HennesseyVenomF5img=img.resize((222,140))
     HennesseyVenomF5img=ImageTk.PhotoImage(resized_HennesseyVenomF5img)
     HennesseyVenomF5label=Label(newWindow, image=HennesseyVenomF5img, width=202, height=200)
     HennesseyVenomF5label.grid(column=8, row=1, columnspan=4, pady=5, sticky=W)
 
-    img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/AstonMartinValhalla.png")
+    img=Image.open("./Project/Img/AstonMartinValhalla.png")
     resized_AstonMartinValhallaimg=img.resize((222,140))
     AstonMartinValhallaimg=ImageTk.PhotoImage(resized_AstonMartinValhallaimg)
     AstonMartinValhallalabel=Label(newWindow, image=AstonMartinValhallaimg, width=202, height=200)
@@ -147,32 +147,32 @@ def minus(numberlabel, pricelabel):
     totalval.set("共消費: "+str(total-price)+" CR")
 
 #Big Forza Banner
-img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/ForzaHorizon5Banner.jpeg")
+img=Image.open("./Project/Img/ForzaHorizon5Banner.jpeg")
 resized_bannerimg=img.resize((652,400))
 tk_bannerimg=ImageTk.PhotoImage(resized_bannerimg)
 bannerlabel=Label(root, image=tk_bannerimg)
 bannerlabel.grid(column=2, row=1, columnspan=8, sticky=N+E+S+W)
 
 #Car Image
-img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/BugattiChiron.png")
+img=Image.open("./Project/Img/BugattiChiron.png")
 resized_bugattichironimg=img.resize((202,120))
 bugattichironimg=ImageTk.PhotoImage(resized_bugattichironimg)
 bugattichironlabel=Label(root, image=bugattichironimg, width=202, height=200)
 bugattichironlabel.grid(column=1, row=2, rowspan=2, pady=0, sticky=W)
 
-img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/Ferrarif40.png")
+img=Image.open("./Project/Img/Ferrarif40.png")
 resized_Ferrarif40img=img.resize((202,120))
 Ferrarif40img=ImageTk.PhotoImage(resized_Ferrarif40img)
 Ferrarif40label=Label(root, image=Ferrarif40img, width=202, height=200)
 Ferrarif40label.grid(column=1, row=4, rowspan=2, pady=0, sticky=W)
 
-img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/LamborghiniCentenario.png")
+img=Image.open("./Project/Img/LamborghiniCentenario.png")
 resized_LamborghiniCentenarioimg=img.resize((242,160))
 LamborghiniCentenarioimg=ImageTk.PhotoImage(resized_LamborghiniCentenarioimg)
 LamborghiniCentenariolabel=Label(root, image=LamborghiniCentenarioimg, width=202, height=200)
 LamborghiniCentenariolabel.grid(column=10, row=2, rowspan=2, padx=0, sticky=W)
 
-img=Image.open("/Users/Louie/Documents/Python_2023Spring/Project/Img/LotusEvija.png")
+img=Image.open("./Project/Img/LotusEvija.png")
 resized_LotusEvijaimg=img.resize((202,120))
 LotusEvijaimg=ImageTk.PhotoImage(resized_LotusEvijaimg)
 LotusEvijalabel=Label(root, image=LotusEvijaimg, width=202, height=200)

@@ -59,11 +59,11 @@
 # Taiwanese.introduce()
 
 
-class Person:
+# class Person:
     
-    @staticmethod
-    def work(workinghour):
-        print("Working Hour: "+str(workinghour))
+#     @staticmethod
+#     def work(workinghour):
+#         print("Working Hour: "+str(workinghour))
 
-Louie = Person()
-Louie.work(8)
+# Louie = Person()
+# Louie.work(8)
