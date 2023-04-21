@@ -25,19 +25,19 @@ def new():
 
     #Buttons
     S2classbutton=Button(newWindow, text="S2 Class", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    S2classbutton.grid(pady=2, padx=5, column=1, row=0, sticky=E+W)
+    S2classbutton.grid(pady=2, padx=5, column=4, row=3, sticky=E+W)
 
     S1classbutton=Button(newWindow, text="S1 Class", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    S1classbutton.grid(pady=2, padx=5, column=2, row=0, sticky=E+W)
+    S1classbutton.grid(pady=2, padx=5, column=5, row=3, sticky=E+W)
 
     Aclassbutton=Button(newWindow, text="A Class", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    Aclassbutton.grid(pady=2, padx=5, column=3, row=0, sticky=E+W)
+    Aclassbutton.grid(pady=2, padx=5, column=4, row=4, sticky=E+W)
 
     EcoFriendlybutton=Button(newWindow, text="Eco-Friendly", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    EcoFriendlybutton.grid(pady=2, padx=5, column=4, row=0, sticky=E+W)
+    EcoFriendlybutton.grid(pady=2, padx=5, column=5, row=4, sticky=E+W)
 
-    buttonQuit = Button(newWindow, text = "Quit", font=("Inter", 18), fg="#000000", bg="#000000", width=12, command=newWindow.destroy)
-    buttonQuit.grid(pady=2, padx=5, column=7, row=0, sticky=E)
+    buttonQuit = Button(newWindow, text = "Quit", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", command=newWindow.destroy)
+    buttonQuit.grid(pady=2, padx=5, column=4, row=0, columnspan=2, sticky=E+W)
 
 
 
@@ -56,7 +56,7 @@ def new():
     RimacConceptTwolabel.grid(column=0, row=1, columnspan=4, pady=5, sticky=W)
 
     img=Image.open("./Project/Img/MercedesAMGOne.png")
-    resized_MercedesAMGOneimg=img.resize((202,130))
+    resized_MercedesAMGOneimg=img.resize((222,140))
     MercedesAMGOneimg=ImageTk.PhotoImage(resized_MercedesAMGOneimg)
     MercedesAMGOnelabel=Label(newWindow, image=MercedesAMGOneimg, width=202, height=200)
     MercedesAMGOnelabel.grid(column=0, row=4, columnspan=4, pady=5, sticky=W)
@@ -65,13 +65,13 @@ def new():
     resized_HennesseyVenomF5img=img.resize((222,140))
     HennesseyVenomF5img=ImageTk.PhotoImage(resized_HennesseyVenomF5img)
     HennesseyVenomF5label=Label(newWindow, image=HennesseyVenomF5img, width=202, height=200)
-    HennesseyVenomF5label.grid(column=8, row=1, columnspan=4, pady=5, sticky=W)
+    HennesseyVenomF5label.grid(column=6, row=1, columnspan=4, pady=5, sticky=W)
 
     img=Image.open("./Project/Img/AstonMartinValhalla.png")
     resized_AstonMartinValhallaimg=img.resize((222,140))
     AstonMartinValhallaimg=ImageTk.PhotoImage(resized_AstonMartinValhallaimg)
     AstonMartinValhallalabel=Label(newWindow, image=AstonMartinValhallaimg, width=202, height=200)
-    AstonMartinValhallalabel.grid(column=8, row=4, columnspan=4, padx=5, sticky=W)
+    AstonMartinValhallalabel.grid(column=6, row=4, columnspan=4, padx=5, sticky=W)
 
     #Row 3 Product Name Label
     productname1=Label(newWindow, text="Rimac Concept Two", font=("Playfair Display", 11), fg="White")
@@ -81,52 +81,52 @@ def new():
     productname2.grid(column=0, row=5, columnspan=4, padx=5, sticky=W)
 
     productname3=Label(newWindow, text="Hennessey Venom F5", font=("Playfair Display", 11), fg="White")
-    productname3.grid(column=8, row=2, columnspan=4, padx=5, sticky=W)
+    productname3.grid(column=6, row=2, columnspan=4, padx=5, sticky=W)
 
     productname4=Label(newWindow, text="Aston Martin Valhalla", font=("Playfair Display", 11), fg="White")
-    productname4.grid(column=8, row=5, columnspan=4, padx=5, sticky=W)
+    productname4.grid(column=6, row=5, columnspan=4, padx=5, sticky=W)
 
     #Row 4 Product Price Label
-    productprice1=Label(newWindow, text="2,000,000", font=("Playfair Display", 10), fg="White")
-    productprice1.grid(column=0, row=3, columnspan=4, padx=5, sticky=W)
+    productprice1=Label(newWindow, text="2,000,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice1.grid(column=0, row=3, padx=5, sticky=W)
 
-    productprice2=Label(newWindow, text="2,700,000", font=("Playfair Display", 10), fg="White")
-    productprice2.grid(column=0, row=6, columnspan=4, padx=5, sticky=W)
+    productprice2=Label(newWindow, text="2,700,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice2.grid(column=0, row=6, padx=5, sticky=W)
 
-    productprice3=Label(newWindow, text="3,000,000", font=("Playfair Display", 10), fg="White")
-    productprice3.grid(column=8, row=3, columnspan=4, padx=5, sticky=W)
+    productprice3=Label(newWindow, text="3,000,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice3.grid(column=6, row=3, padx=5, sticky=W)
 
-    productprice4=Label(newWindow, text="1,150,000", font=("Playfair Display", 10), fg="White")
-    productprice4.grid(column=8, row=6, columnspan=4, padx=5, sticky=W)
+    productprice4=Label(newWindow, text="1,150,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice4.grid(column=6, row=6, padx=5, sticky=W)
 
     #Row 4 Product Number Label+Buttons
     productnumber1=Label(newWindow, text="0", font=("Playfair Display", 12, "bold"), fg="White", width=7)
     productAddbutton1=Button(newWindow, text="+", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber1, productprice1))
     productMinusbutton1=Button(newWindow, text="-", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber1, productprice1))
-    productnumber1.grid(column=1, row=3, sticky=W+E+S+N)
-    productAddbutton1.grid(column=1, row=3, sticky=E)
+    productnumber1.grid(column=2, row=3, sticky=W+E+S+N)
+    productAddbutton1.grid(column=3, row=3, sticky=E)
     productMinusbutton1.grid(column=1, row=3, sticky=W)
 
     productnumber2=Label(newWindow, text="0", font=("Playfair Display", 12, "bold"), fg="White", width=7)
     productAddbutton2=Button(newWindow, text="+", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber2, productprice2))
     productMinusbutton2=Button(newWindow, text="-", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber2, productprice2))
-    productnumber2.grid(column=1, row=6, sticky=W+E+S+N)
-    productAddbutton2.grid(column=1, row=6, sticky=E)
+    productnumber2.grid(column=2, row=6, sticky=W+E+S+N)
+    productAddbutton2.grid(column=3, row=6, sticky=E)
     productMinusbutton2.grid(column=1, row=6, sticky=W)
 
     productnumber3=Label(newWindow, text="0", font=("Playfair Display", 12, "bold"), fg="White", width=7)
     productAddbutton3=Button(newWindow, text="+", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber3, productprice3))
     productMinusbutton3=Button(newWindow, text="-", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber3, productprice3))
-    productnumber3.grid(column=10, row=3, sticky=W+E+S+N)
-    productAddbutton3.grid(column=10, row=3, sticky=E)
-    productMinusbutton3.grid(column=10, row=3, sticky=W)
+    productnumber3.grid(column=8, row=3, sticky=W+E+S+N)
+    productAddbutton3.grid(column=9, row=3, sticky=E)
+    productMinusbutton3.grid(column=7, row=3, sticky=W)
 
     productnumber4=Label(newWindow, text="0", font=("Playfair Display", 12, "bold"), fg="White", width=7)
     productAddbutton4=Button(newWindow, text="+", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: add(productnumber4, productprice4))
     productMinusbutton4=Button(newWindow, text="-", font=("Playfair Display", 10, "bold"), fg="Black", bg="#E7E2E2", command=lambda: minus(productnumber4, productprice4))
-    productnumber4.grid(column=10, row=6, sticky=W+E+S+N)
-    productAddbutton4.grid(column=10, row=6, sticky=E)
-    productMinusbutton4.grid(column=10, row=6, sticky=W)
+    productnumber4.grid(column=8, row=6, sticky=W+E+S+N)
+    productAddbutton4.grid(column=9, row=6, sticky=E)
+    productMinusbutton4.grid(column=7, row=6, sticky=W)
 
     newWindow.mainloop()
 
