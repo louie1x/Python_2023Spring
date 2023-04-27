@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
-import tkinter.ttk as ttk
 root=Tk()
 root.title("Forza Horizon Auction House")
 root.geometry("1080x800")
@@ -12,11 +11,11 @@ img=Image.open("./Project/Img/ForzaLogo.png")
 tk_img=ImageTk.PhotoImage(img)
 #設定程式Icon
 root.iconphoto(True, tk_img)
-
+{"pic":[],}
 
 def new():
     newWindow = Toplevel(root)
-    newWindow.geometry("1060x665")
+    newWindow.geometry("700x665")
     img=Image.open("./Project/Img/ForzaLogo.png")
     resized_logoimg=img.resize((55,55))
     tk_logoimg=ImageTk.PhotoImage(resized_logoimg)
@@ -24,18 +23,6 @@ def new():
     logolabel.grid(column=0, row=0, sticky=W)
 
     #Buttons
-    S2classbutton=Button(newWindow, text="S2 Class", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    S2classbutton.grid(pady=2, padx=5, column=4, row=3, sticky=E+W)
-
-    S1classbutton=Button(newWindow, text="S1 Class", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    S1classbutton.grid(pady=2, padx=5, column=5, row=3, sticky=E+W)
-
-    Aclassbutton=Button(newWindow, text="A Class", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    Aclassbutton.grid(pady=2, padx=5, column=4, row=4, sticky=E+W)
-
-    EcoFriendlybutton=Button(newWindow, text="Eco-Friendly", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", width=6)
-    EcoFriendlybutton.grid(pady=2, padx=5, column=5, row=4, sticky=E+W)
-
     buttonQuit = Button(newWindow, text = "Quit", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", command=newWindow.destroy)
     buttonQuit.grid(pady=2, padx=5, column=4, row=0, columnspan=2, sticky=E+W)
 
@@ -46,7 +33,7 @@ def new():
     resized_bannerimg=img.resize((252,298))
     tk_bannerimg=ImageTk.PhotoImage(resized_bannerimg)
     bannerlabel=Label(newWindow, image=tk_bannerimg)
-    bannerlabel.grid(column=4, row=1, rowspan=2, columnspan=2, sticky=N+E+S+W)
+    bannerlabel.grid(column=4, row=1, rowspan=4, columnspan=2, sticky=S+W+E)
 
     #Row 2 Car Image
     img=Image.open("./Project/Img/RimacConceptTwo.png")
