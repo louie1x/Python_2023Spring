@@ -11,11 +11,18 @@ img=Image.open("./Project/Img/ForzaLogo.png")
 tk_img=ImageTk.PhotoImage(img)
 #設定程式Icon
 root.iconphoto(True, tk_img)
-{"pic":[],}
+S2_Class = {"banner":["./Project/Img/S2 Class.png"], "pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/AstonMartinValhalla.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Aston Martin Valhalla"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "1,150,000 CR"]}
+S1_Class = {"banner":["./Project/Img/S1 Class.png"], "pic":["./Project/Img/PorscheCarreraGT.png", "./Project/Img/McLaren720SSpider.png", "./Project/Img/FerrariEnzo.png", "./Project/Img/BugattiEB110.png"], "name":["Porsche Carrera GT", "McLaren 720S Spider", "Ferrari Enzo", "Bugatti EB110"], "price":["1,000,000 CR", "340,000 CR", "2,800,000 CR", "1,700,000 CR"]}
+A_Class = {"banner":["./Project/Img/A Class.png"], "pic":["./Project/Img/LamborghiniCountach.png", "./Project/Img/Porsche911GT2.png", "./Project/Img/ToyotaSupraRZ.png", "./Project/Img/Mercedes-BenzE63AMG.png"], "name":["Lamborghini Countach", "Porsche 911 GT2", "Toyota Supra RZ", "Mercedes-Benz E63 AMG"], "price":["220,000 CR", "550,000 CR", "38,000 CR", "105,000 CR"]}
+Eco_Friendly = {"banner":["./Project/Img/Eco-Friendly.png"], "pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Lotus Evija", "Rimac Concept Two", "Porsche Taycan Turbo S", "Ford Mustang Mach-E 1400"], "price":["2,500,000 CR", "2,000,000 CR", "185,000 CR", "750,000 CR"]}
 
-def new():
+def new(data):
+    global S2_Class
+    global S1_Class
+    global A_Class
+    global Eco_Friendly
     newWindow = Toplevel(root)
-    newWindow.geometry("700x665")
+    newWindow.geometry("700x600")
     img=Image.open("./Project/Img/ForzaLogo.png")
     resized_logoimg=img.resize((55,55))
     tk_logoimg=ImageTk.PhotoImage(resized_logoimg)
@@ -26,64 +33,62 @@ def new():
     buttonQuit = Button(newWindow, text = "Quit", font=("Inter", 18), fg="#1E1E1E", bg="#ECE8E7", command=newWindow.destroy)
     buttonQuit.grid(pady=2, padx=5, column=4, row=0, columnspan=2, sticky=E+W)
 
-
-
     #Row 1 Banner
-    img=Image.open("./Project/Img/S2 Class.png")
+    img=Image.open(data["banner"][0])
     resized_bannerimg=img.resize((252,298))
     tk_bannerimg=ImageTk.PhotoImage(resized_bannerimg)
     bannerlabel=Label(newWindow, image=tk_bannerimg)
     bannerlabel.grid(column=4, row=1, rowspan=4, columnspan=2, sticky=S+W+E)
 
     #Row 2 Car Image
-    img=Image.open("./Project/Img/RimacConceptTwo.png")
+    img=Image.open(data["pic"][0])
     resized_RimacConceptTwoimg=img.resize((222,140))
     RimacConceptTwoimg=ImageTk.PhotoImage(resized_RimacConceptTwoimg)
     RimacConceptTwolabel=Label(newWindow, image=RimacConceptTwoimg, width=202, height=200)
     RimacConceptTwolabel.grid(column=0, row=1, columnspan=4, pady=5, sticky=W)
 
-    img=Image.open("./Project/Img/MercedesAMGOne.png")
+    img=Image.open(data["pic"][1])
     resized_MercedesAMGOneimg=img.resize((222,140))
     MercedesAMGOneimg=ImageTk.PhotoImage(resized_MercedesAMGOneimg)
     MercedesAMGOnelabel=Label(newWindow, image=MercedesAMGOneimg, width=202, height=200)
     MercedesAMGOnelabel.grid(column=0, row=4, columnspan=4, pady=5, sticky=W)
 
-    img=Image.open("./Project/Img/HennesseyVenomF5.png")
+    img=Image.open(data["pic"][2])
     resized_HennesseyVenomF5img=img.resize((222,140))
     HennesseyVenomF5img=ImageTk.PhotoImage(resized_HennesseyVenomF5img)
     HennesseyVenomF5label=Label(newWindow, image=HennesseyVenomF5img, width=202, height=200)
     HennesseyVenomF5label.grid(column=6, row=1, columnspan=4, pady=5, sticky=W)
 
-    img=Image.open("./Project/Img/AstonMartinValhalla.png")
+    img=Image.open(data["pic"][3])
     resized_AstonMartinValhallaimg=img.resize((222,140))
     AstonMartinValhallaimg=ImageTk.PhotoImage(resized_AstonMartinValhallaimg)
     AstonMartinValhallalabel=Label(newWindow, image=AstonMartinValhallaimg, width=202, height=200)
     AstonMartinValhallalabel.grid(column=6, row=4, columnspan=4, padx=5, sticky=W)
 
     #Row 3 Product Name Label
-    productname1=Label(newWindow, text="Rimac Concept Two", font=("Playfair Display", 11), fg="White")
+    productname1=Label(newWindow, text=data["name"][0], font=("Playfair Display", 11), fg="White")
     productname1.grid(column=0, row=2, columnspan=4, padx=5, sticky=W)
 
-    productname2=Label(newWindow, text="Mercedes AMG One", font=("Playfair Display", 11), fg="White")
+    productname2=Label(newWindow, text=data["name"][1], font=("Playfair Display", 11), fg="White")
     productname2.grid(column=0, row=5, columnspan=4, padx=5, sticky=W)
 
-    productname3=Label(newWindow, text="Hennessey Venom F5", font=("Playfair Display", 11), fg="White")
+    productname3=Label(newWindow, text=data["name"][2], font=("Playfair Display", 11), fg="White")
     productname3.grid(column=6, row=2, columnspan=4, padx=5, sticky=W)
 
-    productname4=Label(newWindow, text="Aston Martin Valhalla", font=("Playfair Display", 11), fg="White")
+    productname4=Label(newWindow, text=data["name"][3], font=("Playfair Display", 11), fg="White")
     productname4.grid(column=6, row=5, columnspan=4, padx=5, sticky=W)
 
     #Row 4 Product Price Label
-    productprice1=Label(newWindow, text="2,000,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice1=Label(newWindow, text=data["price"][0], font=("Playfair Display", 10), fg="White")
     productprice1.grid(column=0, row=3, padx=5, sticky=W)
 
-    productprice2=Label(newWindow, text="2,700,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice2=Label(newWindow, text=data["price"][1], font=("Playfair Display", 10), fg="White")
     productprice2.grid(column=0, row=6, padx=5, sticky=W)
 
-    productprice3=Label(newWindow, text="3,000,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice3=Label(newWindow, text=data["price"][2], font=("Playfair Display", 10), fg="White")
     productprice3.grid(column=6, row=3, padx=5, sticky=W)
 
-    productprice4=Label(newWindow, text="1,150,000 CR", font=("Playfair Display", 10), fg="White")
+    productprice4=Label(newWindow, text=data["price"][3], font=("Playfair Display", 10), fg="White")
     productprice4.grid(column=6, row=6, padx=5, sticky=W)
 
     #Row 4 Product Number Label+Buttons
@@ -166,16 +171,16 @@ LotusEvijalabel=Label(root, image=LotusEvijaimg, width=202, height=200)
 LotusEvijalabel.grid(column=10, row=4, rowspan=2, padx=0, sticky=W)
 
 
-S2classbutton=Button(root, text="S2 Class", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command = new)
+S2classbutton=Button(root, text="S2 Class", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command = lambda:new(S2_Class))
 S2classbutton.grid(column=2, row=2, pady=80, padx=50)
 
-Aclassbutton=Button(root, text="A Class", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10)
+Aclassbutton=Button(root, text="A Class", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command = lambda:new(A_Class))
 Aclassbutton.grid(column=2, row=4, pady=80, padx=50)
 
-S1classbutton=Button(root, text="S1 Class", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10)
+S1classbutton=Button(root, text="S1 Class", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command = lambda:new(S1_Class))
 S1classbutton.grid(column=9, row=2, pady=80, padx=50)
 
-EcoFriendlyclassbutton=Button(root, text="Eco-Friendly", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10)
+EcoFriendlyclassbutton=Button(root, text="Eco-Friendly", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command = lambda:new(Eco_Friendly))
 EcoFriendlyclassbutton.grid(column=9, row=4, pady=80, padx=50)
 
 totalval = StringVar()

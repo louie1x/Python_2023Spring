@@ -1,0 +1,2 @@
+S2_Class = {"pic":["./Project/Img/RimacConceptTwo.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/AstonMartinValhalla.png"], "name":["Rimac Concept Two", "Mercedes AMG One", "Hennessey Venom F5", "Aston Martin Valhalla"], "price":["2,000,000 CR", "2,700,000 CR", "3,000,000 CR", "1,150,000 CR"]}
+print(S2_Class["pic"][0])
