@@ -222,6 +222,10 @@ def closewindow1(infoWindow, newWindow):
     newWindow.deiconify()
     
 def destroyWindow():
+    global userEmail
+    with open("Project/userData.json", "w") as f:
+        data = {userEmail :{"S2_Class_CarInfo":S2_Class_CarInfo,"S1_Class_CarInfo":S1_Class_CarInfo,"A_Class_CarInfo":A_Class_CarInfo,"Eco_Friendly_CarInfo":Eco_Friendly_CarInfo,"S2_Class":S2_Class,"S1_Class":S1_Class,"A_Class":A_Class,"Eco_Friendly":Eco_Friendly}}
+        json.dump(data, f)
     root.destroy()
 
 def menu():
@@ -314,6 +318,14 @@ def loginWindow():
         loginWindow.destroy()
     def login(email,password):
         global userEmail
+        global S2_Class_CarInfo
+        global S1_Class_CarInfo
+        global A_Class_CarInfo
+        global Eco_Friendly_CarInfo
+        global S2_Class
+        global S1_Class
+        global A_Class
+        global Eco_Friendly
         df = pd.DataFrame(ws.get_all_records())
         df_result = df[df["電子郵件："] == email]
         if (len(df_result) >= 1):
@@ -321,6 +333,19 @@ def loginWindow():
                 # 成功登陸
                 messagebox.showwarning("showwarning", "Login Success!")
                 userEmail = email
+                with open('Project/userData.json','r') as f:
+                    data = json.load(f)
+                    if userEmail in list(data.keys()):
+                        print(userEmail in list(data.keys()))
+                        data = data[userEmail]
+                        S2_Class_CarInfo = data["S2_Class_CarInfo"]
+                        S1_Class_CarInfo = data["S1_Class_CarInfo"]
+                        A_Class_CarInfo = data["A_Class_CarInfo"]
+                        Eco_Friendly_CarInfo = data["Eco_Friendly_CarInfo"]
+                        S2_Class = data["S2_Class"]
+                        S1_Class = data["S1_Class"]
+                        A_Class = data["A_Class"]
+                        Eco_Friendly = data["Eco_Friendly"]
                 loginWindow.destroy()
             else:
                 # 密碼錯誤
@@ -408,6 +433,9 @@ def buyoutWindow():
         S1_Class["priceNumber"]=[0, 0, 0, 0]
         A_Class["priceNumber"]=[0, 0, 0, 0]
         Eco_Friendly["priceNumber"]=[0, 0, 0, 0]
+        with open("Project/userData.json", "w") as f:
+            data = {userEmail :{"S2_Class_CarInfo":S2_Class_CarInfo,"S1_Class_CarInfo":S1_Class_CarInfo,"A_Class_CarInfo":A_Class_CarInfo,"Eco_Friendly_CarInfo":Eco_Friendly_CarInfo,"S2_Class":S2_Class,"S1_Class":S1_Class,"A_Class":A_Class,"Eco_Friendly":Eco_Friendly}}
+            json.dump(data, f)
 
     buyoutWindow.mainloop()
 
