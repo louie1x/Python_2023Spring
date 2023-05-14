@@ -1,4 +1,4 @@
-n, m = map(int, input().split())
+n = map(int, input().split())
 
 most_progress = -1
 most_progress_student = 1
@@ -10,7 +10,7 @@ for i in range(1, n + 1):
     scores = list(map(int, input().split()))
     progress = 0
     concern = 0
-    for j in range(1, m):
+    for j in range(1, n):
         if scores[j] > scores[j - 1]:
             progress += scores[j] - scores[j - 1]
         else:

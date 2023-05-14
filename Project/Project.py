@@ -31,20 +31,20 @@ def menu():
     table.tag_configure("totalcolor", background="#E7E2E2")
 
 
-    subtotal1 = int(productnumber1['text']) * int(productprice1["text"].replace(",", "").replace("CR", "").strip())
-    table.insert('',index='end',text=productname1['text'],values=(productprice1['text'],productnumber1['text'], subtotal1))
+    # subtotal1 = int(productnumber1['text']) * int(productprice1["text"].replace(",", "").replace("CR", "").strip())
+    # table.insert('',index='end',text=productname1['text'],values=(productprice1['text'],productnumber1['text'], subtotal1))
 
-    subtotal2 = int(productnumber2['text']) * int(productprice2["text"].replace(",", "").replace("CR", "").strip())
-    table.insert('',index='end',text=productname2['text'],values=(productprice2['text'],productnumber2['text'], subtotal2))
+    # subtotal2 = int(productnumber2['text']) * int(productprice2["text"].replace(",", "").replace("CR", "").strip())
+    # table.insert('',index='end',text=productname2['text'],values=(productprice2['text'],productnumber2['text'], subtotal2))
 
-    subtotal3 = int(productnumber3['text']) * int(productprice3["text"].replace(",", "").replace("CR", "").strip())
-    table.insert('',index='end',text=productname3['text'],values=(productprice3['text'],productnumber3['text'], subtotal3))
+    # subtotal3 = int(productnumber3['text']) * int(productprice3["text"].replace(",", "").replace("CR", "").strip())
+    # table.insert('',index='end',text=productname3['text'],values=(productprice3['text'],productnumber3['text'], subtotal3))
 
-    subtotal4 = int(productnumber4['text']) * int(productprice4["text"].replace(",", "").replace("CR", "").strip())
-    table.insert('',index='end',text=productname4['text'],values=(productprice4['text'],productnumber4['text'], subtotal4))
+    # subtotal4 = int(productnumber4['text']) * int(productprice4["text"].replace(",", "").replace("CR", "").strip())
+    # table.insert('',index='end',text=productname4['text'],values=(productprice4['text'],productnumber4['text'], subtotal4))
 
-    total = subtotal1+subtotal2+subtotal3+subtotal4
-    table.insert('',index='end',text='Total',values=['','', total], tags=('totalcolor'))
+    # total = subtotal1+subtotal2+subtotal3+subtotal4
+    # table.insert('',index='end',text='Total',values=['','', total], tags=('totalcolor'))
 
     table.pack()
 

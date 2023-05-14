@@ -1,8 +1,5 @@
-# 讀入輸入值
 n, x, y = map(int, input().split())
 targets = list(map(int, input().split()))
-
-# 計算擊倒所有標靶需要幾次射擊
 
 
 # 計算擊倒特定標靶需要幾次射擊
