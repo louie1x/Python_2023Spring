@@ -27,13 +27,13 @@ root.iconphoto(True, tk_img)
 
 userEmail = ""
 
-S2_Class_CarInfo = {"pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "engine":["5.0L Twin-Turbocharged V8"+'\n'+"                                  1280 bhp (954 kW), 883 lb⋅ft (1197 N·m)", "1.6L Turbocharged Hybrid V6"+'\n'+"877 bhp (654 kW), 535 lb⋅ft (725 N·m)", "6.6L Twin-Turbocharged V8"+'\n'+"1817 bhp (1355 kW), 1193 lb⋅ft (1617 N·m)", "5.2L Naturally-Aspirated V10"+'\n'+"571 bhp (426 kW), 398 lb⋅ft (540 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"9-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"8-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3131 lbs (1420 kg)", "3737 lbs (1695 kg)", "3053 lbs (1385 kg)", "2202 lbs (999 kg)"]}
+S2_Class_CarInfo = {"pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "engine":["5.0L Twin-Turbocharged V8"+'\n'+"                                  1280 bhp (954 kW), 883 lb⋅ft (1197 N·m)", "1.6L Turbocharged Hybrid V6"+'\n'+"                                  877 bhp (654 kW), 535 lb⋅ft (725 N·m)", "6.6L Twin-Turbocharged V8"+'\n'+"                                  1817 bhp (1355 kW), 1193 lb⋅ft (1617 N·m)", "5.2L Naturally-Aspirated V10"+'\n'+"                                  571 bhp (426 kW), 398 lb⋅ft (540 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"9-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"8-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3131 lbs (1420 kg)", "3737 lbs (1695 kg)", "3053 lbs (1385 kg)", "2202 lbs (999 kg)"]}
 
-S1_Class_CarInfo = {"pic":["./Project/Img/PorscheCarreraGT.png", "./Project/Img/McLaren720SSpider.png", "./Project/Img/FerrariEnzo.png", "./Project/Img/BugattiEB110.png"], "name":["Porsche Carrera GT", "McLaren 720S Spider", "Ferrari Enzo", "Bugatti EB110"], "price":["1,000,000 CR", "340,000 CR", "2,800,000 CR", "1,700,000 CR"], "engine":["5.0L Twin-Turbocharged V8"+'\n'+"                                  1280 bhp (954 kW), 883 lb⋅ft (1197 N·m)", "1.6L Turbocharged Hybrid V6"+'\n'+"877 bhp (654 kW), 535 lb⋅ft (725 N·m)", "6.6L Twin-Turbocharged V8"+'\n'+"1817 bhp (1355 kW), 1193 lb⋅ft (1617 N·m)", "5.2L Naturally-Aspirated V10"+'\n'+"571 bhp (426 kW), 398 lb⋅ft (540 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"9-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"8-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3131 lbs (1420 kg)", "3737 lbs (1695 kg)", "3053 lbs (1385 kg)", "2202 lbs (999 kg)"]}
+S1_Class_CarInfo = {"pic":["./Project/Img/PorscheCarreraGT.png", "./Project/Img/McLaren720SSpider.png", "./Project/Img/FerrariEnzo.png", "./Project/Img/BugattiEB110.png"], "name":["Porsche Carrera GT", "McLaren 720S Spider", "Ferrari Enzo", "Bugatti EB110"], "price":["1,000,000 CR", "340,000 CR", "2,800,000 CR", "1,700,000 CR"], "engine":["5.7L Naturally-Aspirated V10"+'\n'+"                                  605 bhp (451 kW), 435 lb⋅ft (590 N·m)", "4.0L Twin-Turbocharged V8"+'\n'+"                                  711 bhp (530 kW), 567 lb⋅ft (769 N·m)", "6.0L Naturally-Aspirated V12"+'\n'+"                                  650 bhp (485 kW), 485 lb⋅ft (658 N·m)", "3.5L Quad-Turbocharged V12"+'\n'+"                                  611 bhp (456 kW), 480 lb⋅ft (651 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3528 lbs (1600 kg)", "3157 lbs (1432 kg)", "3086 lbs (1400 kg)", "3126 lbs (1418 kg)"]}
 
-A_Class_CarInfo = {"pic":["./Project/Img/LamborghiniCountach.png", "./Project/Img/Porsche911GT2.png", "./Project/Img/ToyotaSupraRZ.png", "./Project/Img/Mercedes-BenzE63AMG.png"], "name":["Lamborghini Countach", "Porsche 911 GT2", "Toyota Supra RZ", "Mercedes-Benz E63 AMG"], "price":["220,000 CR", "550,000 CR", "38,000 CR", "105,000 CR"], "engine":["5.0L Twin-Turbocharged V8"+'\n'+"                                  1280 bhp (954 kW), 883 lb⋅ft (1197 N·m)", "1.6L Turbocharged Hybrid V6"+'\n'+"877 bhp (654 kW), 535 lb⋅ft (725 N·m)", "6.6L Twin-Turbocharged V8"+'\n'+"1817 bhp (1355 kW), 1193 lb⋅ft (1617 N·m)", "5.2L Naturally-Aspirated V10"+'\n'+"571 bhp (426 kW), 398 lb⋅ft (540 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"9-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"8-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3131 lbs (1420 kg)", "3737 lbs (1695 kg)", "3053 lbs (1385 kg)", "2202 lbs (999 kg)"]}
+A_Class_CarInfo = {"pic":["./Project/Img/LamborghiniCountach.png", "./Project/Img/Porsche911GT2.png", "./Project/Img/ToyotaSupraRZ.png", "./Project/Img/Mercedes-BenzE63AMG.png"], "name":["Lamborghini Countach", "Porsche 911 GT2", "Toyota Supra RZ", "Mercedes-Benz E63 AMG"], "price":["220,000 CR", "550,000 CR", "38,000 CR", "105,000 CR"], "engine":["5.2L Naturally-Aspirated V12"+'\n'+"                                  455 bhp (339 kW), 369 lb⋅ft (500 N·m)", "3.6L Twin-Turbocharged F6"+'\n'+"                                  424 bhp (316 kW), 398 lb⋅ft (540 N·m)", "3.0L Twin-Turbocharged I6"+'\n'+"                                  320 bhp (239 kW), 315 lb⋅ft (427 N·m)", "5.5L Twin-Turbocharged V8"+'\n'+"                                  577 bhp (430 kW), 590 lb⋅ft (800 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"5-speed Transmission", "Rear-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Front-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Front-Engined, All-Wheel Drive"+'\n'+"7-speed Transmission"], "weight":["3284 lbs (1490 kg)", "2855 lbs (1295 kg)", "3329 lbs (1510 kg)", "4277 lbs (1940 kg)"]}
 
-Eco_Friendly_CarInfo = {"pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "engine":["5.0L Twin-Turbocharged V8"+'\n'+"                                  1280 bhp (954 kW), 883 lb⋅ft (1197 N·m)", "1.6L Turbocharged Hybrid V6"+'\n'+"877 bhp (654 kW), 535 lb⋅ft (725 N·m)", "6.6L Twin-Turbocharged V8"+'\n'+"1817 bhp (1355 kW), 1193 lb⋅ft (1617 N·m)", "5.2L Naturally-Aspirated V10"+'\n'+"571 bhp (426 kW), 398 lb⋅ft (540 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"9-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"8-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3131 lbs (1420 kg)", "3737 lbs (1695 kg)", "3053 lbs (1385 kg)", "2202 lbs (999 kg)"]}
+Eco_Friendly_CarInfo = {"pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Lotus Evija", "Rimac Concept Two", "Porsche Taycan Turbo S", "Ford Mustang Mach-E 1400"], "price":["2,500,000 CR", "2,000,000 CR", "185,000 CR", "750,000 CR"], "engine":["4x Electric Motors"+'\n'+"                                  1973 bhp (1471 kW), 1253 lb⋅ft (1699 N·m)", "4 liquid-cooled permanent magnet"+'\n'+"synchronous electric motors"+'\n'+"                                  1887 bhp (1407 kW), 1695 lb⋅ft (2298 N·m)", "2x electric motors (AC synchronous)"+'\n'+"                                  752 bhp (561 kW), 774 lb⋅ft (1049 N·m)", "7x Electric Motors"+'\n'+"                                 1400 bhp (1044 kW), 1832 lb⋅ft (2484 N·m)"], "layout":["Mid-Engined, All-Wheel Drive"+'\n'+"1-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"2-speed Transmission", "Rear-Engined, All-Wheel Drive"+'\n'+"2-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"1-speed Transmission"], "weight":["3704 lbs (1680 kg)", "4299 lbs (1950 kg)", "5121 lbs (2323 kg)", "4960 lbs (2250 kg)"]}
 
 S2_Class = {"banner":["./Project/Img/S2 Class.png"], "pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "priceNumber":[0, 0, 0, 0]}
 
@@ -52,7 +52,7 @@ def info(newWindow, data1, number):
     global Eco_Friendly_CarInfo
     newWindow.iconify()
     infoWindow = Toplevel(root)
-    infoWindow.geometry("970x600+100+100")
+    infoWindow.geometry("970x600+230+150")
     buttonQuit = Button(infoWindow, text = "Quit", font=("Playfair Display", 18), fg="#1E1E1E", bg="#ECE8E7",  width=30, command=lambda:closewindow1(infoWindow, newWindow))
     buttonQuit.grid(pady=2, padx=5, column=1, row=0, columnspan=8)
 
@@ -223,14 +223,15 @@ def closewindow1(infoWindow, newWindow):
     
 def destroyWindow():
     global userEmail
-    with open("Project/userData.json", "w") as f:
-        data = {userEmail :{"S2_Class_CarInfo":S2_Class_CarInfo,"S1_Class_CarInfo":S1_Class_CarInfo,"A_Class_CarInfo":A_Class_CarInfo,"Eco_Friendly_CarInfo":Eco_Friendly_CarInfo,"S2_Class":S2_Class,"S1_Class":S1_Class,"A_Class":A_Class,"Eco_Friendly":Eco_Friendly}}
-        json.dump(data, f)
+    if userEmail != "":
+        with open("./Project/userData.json", "w") as f:
+            data = {userEmail :{"S2_Class_CarInfo":S2_Class_CarInfo,"S1_Class_CarInfo":S1_Class_CarInfo,"A_Class_CarInfo":A_Class_CarInfo,"Eco_Friendly_CarInfo":Eco_Friendly_CarInfo,"S2_Class":S2_Class,"S1_Class":S1_Class,"A_Class":A_Class,"Eco_Friendly":Eco_Friendly}}
+            json.dump(data, f)
     root.destroy()
 
 def menu():
     menuWindow = Toplevel(root)
-    menuWindow.geometry("1000x300+230+220")
+    menuWindow.geometry("1000x250+230+220")
     table=ttk.Treeview(menuWindow, columns=["Product Name", "Unit Price", "Quantity", "Subtotal"])
     # create columns title
     table.heading("#0", text="Product name")
@@ -298,6 +299,9 @@ def menu():
 
     total = subtotal1+subtotal2+subtotal3+subtotal4+subtotal5+subtotal6+subtotal7+subtotal8+subtotal9+subtotal10+subtotal11+subtotal12+subtotal13+subtotal14+subtotal15+subtotal16
     table.insert('',index='end',text='Total',values=['','', total], tags=('totalcolor'))
+
+    Buyoutbutton = Button(menuWindow, text="Buyout", font=("Playfair Display", 18, "bold"), width = 10, command=buyoutWindow)
+    Buyoutbutton.pack(side="bottom")
 
     table.pack()
 
@@ -386,8 +390,6 @@ def buyoutWindow():
 
     global userEmail
 
-    buyoutWindow = Toplevel(root)
-    buyoutWindow.geometry("450x80+550+300")
     shoppinglist = [[S2_Class_CarInfo["name"][0], S2_Class_CarInfo["price"][0], S2_Class["priceNumber"][0]],[S2_Class_CarInfo["name"][1], S2_Class_CarInfo["price"][1], S2_Class["priceNumber"][1]],[S2_Class_CarInfo["name"][2], S2_Class_CarInfo["price"][2], S2_Class["priceNumber"][2]],[S2_Class_CarInfo["name"][3], S2_Class_CarInfo["price"][3], S2_Class["priceNumber"][3]],[S1_Class_CarInfo["name"][0], S1_Class_CarInfo["price"][0], S1_Class["priceNumber"][0]],[S1_Class_CarInfo["name"][1], S1_Class_CarInfo["price"][1], S1_Class["priceNumber"][1]],[S1_Class_CarInfo["name"][2], S1_Class_CarInfo["price"][2], S1_Class["priceNumber"][2]],[S1_Class_CarInfo["name"][3], S1_Class_CarInfo["price"][3], S1_Class["priceNumber"][3]],[A_Class_CarInfo["name"][0], A_Class_CarInfo["price"][0], A_Class["priceNumber"][0]],[A_Class_CarInfo["name"][1], A_Class_CarInfo["price"][1], A_Class["priceNumber"][1]],[A_Class_CarInfo["name"][2], A_Class_CarInfo["price"][2], A_Class["priceNumber"][2]],[A_Class_CarInfo["name"][3], A_Class_CarInfo["price"][3], A_Class["priceNumber"][3]],[Eco_Friendly_CarInfo["name"][0], Eco_Friendly_CarInfo["price"][0], Eco_Friendly["priceNumber"][0]],[Eco_Friendly_CarInfo["name"][1], Eco_Friendly_CarInfo["price"][1], Eco_Friendly["priceNumber"][1]],[Eco_Friendly_CarInfo["name"][2], Eco_Friendly_CarInfo["price"][2], Eco_Friendly["priceNumber"][2]],[Eco_Friendly_CarInfo["name"][3], Eco_Friendly_CarInfo["price"][3], Eco_Friendly["priceNumber"][3]]]
     df_shoppinglist = pd.DataFrame(shoppinglist, columns = ["name", "price", "number"])
     df_shoppinglist.to_excel("./Project/ShoppingList.xlsx")
@@ -426,6 +428,8 @@ def buyoutWindow():
                 smtp.quit()
             except Exception as e:
                 print("Error message: ", e)
+        buyoutWindow = Toplevel(root)
+        buyoutWindow.geometry("450x80+550+300")
         mylabel = Label(buyoutWindow, text = "Successfully purchased!", font=("Playfair Display", 30))
         mylabel.pack()
 
@@ -490,15 +494,12 @@ totallabel=Label(root, textvariable=totalval, font=("Inter", 18), fg="White")
 # totallabel.grid(column=1, row=0, columnspan=8, sticky=W+S)
 
 Menubutton=Button(root, text="Menu", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=menu)
-Menubutton.grid(column=10, row=1, pady=80, padx=50, sticky=N)
-
-Buyoutbutton=Button(root, text="Buyout", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=buyoutWindow)
-Buyoutbutton.grid(column=10, row=1, pady=80, padx=50, sticky=W)
+Menubutton.grid(column=1, row=1, pady=80, padx=50, sticky=N)
 
 quitbutton=Button(root, text="Quit", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=destroyWindow)
-quitbutton.grid(column=1, row=1, pady=80, padx=50, sticky=W)
+quitbutton.grid(column=1, row=1, pady=80, padx=50, sticky=S)
 
 Loginbutton=Button(root, text="Login", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=loginWindow)
-Loginbutton.grid(column=1, row=1, pady=80, padx=50, sticky=N)
+Loginbutton.grid(column=1, row=1, pady=80, padx=50, sticky=W)
 
 root.mainloop()
