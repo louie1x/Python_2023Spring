@@ -4,7 +4,6 @@ from PIL import Image, ImageTk
 import tkinter.ttk as ttk
 import pygsheets
 from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
 from email.mime.base import MIMEBase
 from pathlib import Path
 from email.mime.multipart import MIMEMultipart
@@ -27,13 +26,13 @@ root.iconphoto(True, tk_img)
 
 userEmail = ""
 
-S2_Class_CarInfo = {"pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "engine":["5.0L Twin-Turbocharged V8"+'\n'+"                                  1280 bhp (954 kW), 883 lb⋅ft (1197 N·m)", "1.6L Turbocharged Hybrid V6"+'\n'+"                                  877 bhp (654 kW), 535 lb⋅ft (725 N·m)", "6.6L Twin-Turbocharged V8"+'\n'+"                                  1817 bhp (1355 kW), 1193 lb⋅ft (1617 N·m)", "5.2L Naturally-Aspirated V10"+'\n'+"                                  571 bhp (426 kW), 398 lb⋅ft (540 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"9-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"8-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3131 lbs (1420 kg)", "3737 lbs (1695 kg)", "3053 lbs (1385 kg)", "2202 lbs (999 kg)"]}
+S2_Class_CarInfo = {"pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto"+"\n"+"Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "speed":["10", "7.7", "10", "7.8"], "handling":["10", "8.9", "9.6", "10"], "acceleration":["6.9", "7.5", "6.8", "10"], "launch":["7.4", "3.2", "7.3", "10"], "braking":["9.0", "10", "8.7", "10"], "offroad":["4.4", "4.7", "4.2", "4.6"]}
 
-S1_Class_CarInfo = {"pic":["./Project/Img/PorscheCarreraGT.png", "./Project/Img/McLaren720SSpider.png", "./Project/Img/FerrariEnzo.png", "./Project/Img/BugattiEB110.png"], "name":["Porsche Carrera GT", "McLaren 720S Spider", "Ferrari Enzo", "Bugatti EB110"], "price":["1,000,000 CR", "340,000 CR", "2,800,000 CR", "1,700,000 CR"], "engine":["5.7L Naturally-Aspirated V10"+'\n'+"                                  605 bhp (451 kW), 435 lb⋅ft (590 N·m)", "4.0L Twin-Turbocharged V8"+'\n'+"                                  711 bhp (530 kW), 567 lb⋅ft (769 N·m)", "6.0L Naturally-Aspirated V12"+'\n'+"                                  650 bhp (485 kW), 485 lb⋅ft (658 N·m)", "3.5L Quad-Turbocharged V12"+'\n'+"                                  611 bhp (456 kW), 480 lb⋅ft (651 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"7-speed Transmission", "Mid-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"6-speed Transmission"], "weight":["3528 lbs (1600 kg)", "3157 lbs (1432 kg)", "3086 lbs (1400 kg)", "3126 lbs (1418 kg)"]}
+S1_Class_CarInfo = {"pic":["./Project/Img/PorscheCarreraGT.png", "./Project/Img/McLaren720SSpider.png", "./Project/Img/FerrariEnzo.png", "./Project/Img/BugattiEB110.png"], "name":["Porsche Carrera GT", "McLaren 720S Spider", "Ferrari Enzo", "Bugatti EB110"], "price":["1,000,000 CR", "340,000 CR", "2,800,000 CR", "1,700,000 CR"], "speed":["7.1", "7.5", "8.1", "8.3"], "handling":["7.6", "7.4", "7.5", "6.5"], "acceleration":["6.6", "6.9", "6.4", "8.0"], "launch":["7.2", "7.5", "6.9", "3.8"], "braking":["7.5", "8.9", "8.3", "5.2"], "offroad":["4.5", "4.4", "4.7", "4.9"]}
 
-A_Class_CarInfo = {"pic":["./Project/Img/LamborghiniCountach.png", "./Project/Img/Porsche911GT2.png", "./Project/Img/ToyotaSupraRZ.png", "./Project/Img/Mercedes-BenzE63AMG.png"], "name":["Lamborghini Countach", "Porsche 911 GT2", "Toyota Supra RZ", "Mercedes-Benz E63 AMG"], "price":["220,000 CR", "550,000 CR", "38,000 CR", "105,000 CR"], "engine":["5.2L Naturally-Aspirated V12"+'\n'+"                                  455 bhp (339 kW), 369 lb⋅ft (500 N·m)", "3.6L Twin-Turbocharged F6"+'\n'+"                                  424 bhp (316 kW), 398 lb⋅ft (540 N·m)", "3.0L Twin-Turbocharged I6"+'\n'+"                                  320 bhp (239 kW), 315 lb⋅ft (427 N·m)", "5.5L Twin-Turbocharged V8"+'\n'+"                                  577 bhp (430 kW), 590 lb⋅ft (800 N·m)"], "layout":["Mid-Engined, Rear-Wheel Drive"+'\n'+"5-speed Transmission", "Rear-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Front-Engined, Rear-Wheel Drive"+'\n'+"6-speed Transmission", "Front-Engined, All-Wheel Drive"+'\n'+"7-speed Transmission"], "weight":["3284 lbs (1490 kg)", "2855 lbs (1295 kg)", "3329 lbs (1510 kg)", "4277 lbs (1940 kg)"]}
+A_Class_CarInfo = {"pic":["./Project/Img/LamborghiniCountach.png", "./Project/Img/Porsche911GT2.png", "./Project/Img/ToyotaSupraRZ.png", "./Project/Img/Mercedes-BenzE63AMG.png"], "name":["Lamborghini Countach", "Porsche 911 GT2", "Toyota Supra RZ", "Mercedes-Benz"+"\n"+"   E63 AMG"], "price":["220,000 CR", "550,000 CR", "38,000 CR", "105,000 CR"], "speed":["6.8", "6.5", "6.4", "7.7"], "handling":["6.2", "6.3", "5.4", "6.0"], "acceleration":["4.7", "6.7", "4.6", "7.0"], "launch":["3.6", "5.3", "3.1", "7.8"], "braking":["4.3", "5.7", "3.5", "4.5"], "offroad":["4.8", "4.5", "4.7", "5.2"]}
 
-Eco_Friendly_CarInfo = {"pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Lotus Evija", "Rimac Concept Two", "Porsche Taycan Turbo S", "Ford Mustang Mach-E 1400"], "price":["2,500,000 CR", "2,000,000 CR", "185,000 CR", "750,000 CR"], "engine":["4x Electric Motors"+'\n'+"                                  1973 bhp (1471 kW), 1253 lb⋅ft (1699 N·m)", "4 liquid-cooled permanent magnet"+'\n'+"synchronous electric motors"+'\n'+"                                  1887 bhp (1407 kW), 1695 lb⋅ft (2298 N·m)", "2x electric motors (AC synchronous)"+'\n'+"                                  752 bhp (561 kW), 774 lb⋅ft (1049 N·m)", "7x Electric Motors"+'\n'+"                                 1400 bhp (1044 kW), 1832 lb⋅ft (2484 N·m)"], "layout":["Mid-Engined, All-Wheel Drive"+'\n'+"1-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"2-speed Transmission", "Rear-Engined, All-Wheel Drive"+'\n'+"2-speed Transmission", "Mid-Engined, All-Wheel Drive"+'\n'+"1-speed Transmission"], "weight":["3704 lbs (1680 kg)", "4299 lbs (1950 kg)", "5121 lbs (2323 kg)", "4960 lbs (2250 kg)"]}
+Eco_Friendly_CarInfo = {"pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Lotus Evija", "Rimac Concept Two", "Porsche Taycan Turbo S", "Ford Mustang"+"\n"+"                Mach-E 1400"], "price":["2,500,000 CR", "2,000,000 CR", "185,000 CR", "750,000 CR"], "speed":["7.6", "9.1", "10", "5.6"], "handling":["7.9", "6.9", "7.8", "6.9"], "acceleration":["7.6", "9.9", "9.7", "7.3"], "launch":["8.5", "10", "10", "8.1"], "braking":["10", "9.3", "7.2", "8.4"], "offroad":["3.9", "4.4", "4.4", "4.2"]}
 
 S2_Class = {"banner":["./Project/Img/S2 Class.png"], "pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "priceNumber":[0, 0, 0, 0]}
 
@@ -52,38 +51,49 @@ def info(newWindow, data1, number):
     global Eco_Friendly_CarInfo
     newWindow.iconify()
     infoWindow = Toplevel(root)
-    infoWindow.geometry("970x600+230+150")
+    infoWindow.geometry("1000x600+230+150")
     buttonQuit = Button(infoWindow, text = "Quit", font=("Playfair Display", 18), fg="#1E1E1E", bg="#ECE8E7",  width=30, command=lambda:closewindow1(infoWindow, newWindow))
     buttonQuit.grid(pady=2, padx=5, column=1, row=0, columnspan=8)
-
     # Group 1
     spacing = Label(infoWindow, text="     ", font=("Playfair Display", 18))
-    spacing.grid(pady=20, column=1, row=1)
+    spacing.grid(pady=20, column=1, row=1, sticky=E)
 
-    nameLabel = Label(infoWindow, text="𝐍𝐚𝐦𝐞: "+data1["name"][number], font=("Playfair Display", 18))
-    nameLabel.grid(pady=20, column=1, row=2)
+    nameLabel = Label(infoWindow, text="𝐍𝐚𝐦𝐞: "+data1["name"][number], font=("Playfair Display", 22))
+    nameLabel.grid(pady=20, column=1, row=2, sticky=E)
 
-    priceLabel = Label(infoWindow, text="𝐏𝐫𝐢𝐜𝐞: "+data1["price"][number], font=("Playfair Display", 18))
-    priceLabel.grid(column=1, row=3)
+    priceLabel = Label(infoWindow, text="𝐏𝐫𝐢𝐜𝐞: "+data1["price"][number], font=("Playfair Display", 22))
+    priceLabel.grid(column=1, row=3, sticky=E)
 
-    spacing = Label(infoWindow, text="     ", font=("Playfair Display", 18))
-    spacing.grid(pady=30, column=1, row=4)
+    spacing = Label(infoWindow, text="     ", font=("Playfair Display", 19))
+    spacing.grid(pady=20, column=1, row=4, sticky=E)
 
-    engineLabel = Label(infoWindow, text="𝐄𝐧𝐠𝐢𝐧𝐞: "+data1["engine"][number], font=("Playfair Display", 18))
-    engineLabel.grid(column=1, row=5)
+    speedLabel = Label(infoWindow, text="𝐒𝐩𝐞𝐞𝐝: "+data1["speed"][number], font=("Playfair Display", 19))
+    speedLabel.grid(column=1, row=5, sticky=E)
 
-    priceLabel = Label(infoWindow, text="𝐋𝐚𝐲𝐨𝐮𝐭: "+data1["layout"][number], font=("Playfair Display", 18))
-    priceLabel.grid(pady=20, column=1, row=6)
+    handlingLabel = Label(infoWindow, text="𝐇𝐚𝐧𝐝𝐥𝐢𝐧𝐠: "+data1["handling"][number], font=("Playfair Display", 19))
+    handlingLabel.grid(column=1, row=6, sticky=E)
 
-    priceLabel = Label(infoWindow, text="𝐖𝐞𝐢𝐠𝐡𝐭: "+data1["weight"][number], font=("Playfair Display", 18))
-    priceLabel.grid(column=1, row=7)
+    accelLabel = Label(infoWindow, text="𝐀𝐜𝐜𝐞𝐥𝐞𝐫𝐚𝐭𝐢𝐨𝐧: "+data1["acceleration"][number], font=("Playfair Display", 19))
+    accelLabel.grid(column=1, row=7, sticky=E)
+
+    launchLabel = Label(infoWindow, text="𝐋𝐚𝐮𝐧𝐜𝐡: "+data1["launch"][number], font=("Playfair Display", 19))
+    launchLabel.grid(column=1, row=8, sticky=E)
+
+    brakingLabel = Label(infoWindow, text="𝐁𝐫𝐚𝐤𝐢𝐧𝐠: "+data1["braking"][number], font=("Playfair Display", 19))
+    brakingLabel.grid(column=1, row=9, sticky=E)
+
+    offroadLabel = Label(infoWindow, text="𝐎𝐟𝐟𝐫𝐨𝐚𝐝: "+data1["offroad"][number], font=("Playfair Display", 19))
+    offroadLabel.grid(column=1, row=10, sticky=E)
+
+    spacing = Label(infoWindow, text="                                    ", font=("Playfair Display", 19))
+    spacing.grid(pady=30, column=2, row=4, sticky=E)
 
     img=Image.open(str(data1["pic"][number]))
     resized_CarInfoImg1=img.resize((500,300))
     global tk_CarInfoImg1
     tk_CarInfoImg1=ImageTk.PhotoImage(resized_CarInfoImg1)
     CarInfoImg1label=Label(infoWindow, image=tk_CarInfoImg1)
-    CarInfoImg1label.grid(column=3, row=1, rowspan=4, columnspan=3)
+    CarInfoImg1label.grid(column=3, row=2, rowspan=4, columnspan=3, sticky=E)
 
 
 
@@ -307,7 +317,7 @@ def menu():
 
     menuWindow.mainloop()
 
-def loginWindow():
+def loginWindowfunction():
     gc = pygsheets.authorize(service_file="Project/causal-scarab-383206-d3edf987cf5e.json")
     sht = gc.open_by_url("https://docs.google.com/spreadsheets/d/1mpgr_6vPS_pSIxFawYWXU9czJPpZq4Q-c9j7y5wlYHM/edit#gid=0")
     ws = sht[0]
@@ -499,7 +509,7 @@ Menubutton.grid(column=1, row=1, pady=80, padx=50, sticky=N)
 quitbutton=Button(root, text="Quit", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=destroyWindow)
 quitbutton.grid(column=1, row=1, pady=80, padx=50, sticky=S)
 
-Loginbutton=Button(root, text="Login", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=loginWindow)
+Loginbutton=Button(root, text="Login", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=loginWindowfunction)
 Loginbutton.grid(column=1, row=1, pady=80, padx=50, sticky=W)
 
 root.mainloop()
