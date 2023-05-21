@@ -11,9 +11,12 @@ import pandas as pd
 import smtplib
 from email import encoders
 import json
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
 
 root=Tk()
-root.title("Forza Horizon Auction House")
+root.title("Forza Horizon Marketplace")
 root.geometry("1150x850+150+10")
 
 #開啟圖片
@@ -32,7 +35,7 @@ S1_Class_CarInfo = {"pic":["./Project/Img/PorscheCarreraGT.png", "./Project/Img/
 
 A_Class_CarInfo = {"pic":["./Project/Img/LamborghiniCountach.png", "./Project/Img/Porsche911GT2.png", "./Project/Img/ToyotaSupraRZ.png", "./Project/Img/Mercedes-BenzE63AMG.png"], "name":["Lamborghini Countach", "Porsche 911 GT2", "Toyota Supra RZ", "Mercedes-Benz"+"\n"+"   E63 AMG"], "price":["220,000 CR", "550,000 CR", "38,000 CR", "105,000 CR"], "speed":["6.8", "6.5", "6.4", "7.7"], "handling":["6.2", "6.3", "5.4", "6.0"], "acceleration":["4.7", "6.7", "4.6", "7.0"], "launch":["3.6", "5.3", "3.1", "7.8"], "braking":["4.3", "5.7", "3.5", "4.5"], "offroad":["4.8", "4.5", "4.7", "5.2"]}
 
-Eco_Friendly_CarInfo = {"pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Lotus Evija", "Rimac Concept Two", "Porsche Taycan Turbo S", "Ford Mustang"+"\n"+"                Mach-E 1400"], "price":["2,500,000 CR", "2,000,000 CR", "185,000 CR", "750,000 CR"], "speed":["7.6", "9.1", "10", "5.6"], "handling":["7.9", "6.9", "7.8", "6.9"], "acceleration":["7.6", "9.9", "9.7", "7.3"], "launch":["8.5", "10", "10", "8.1"], "braking":["10", "9.3", "7.2", "8.4"], "offroad":["3.9", "4.4", "4.4", "4.2"]}
+Eco_Friendly_CarInfo = {"pic":["./Project/Img/LotusEvija.png", "./Project/Img/RimacConceptTwo.png", "./Project/Img/PorscheTaycanTurboS.png", "./Project/Img/FordMustangMachE1400.png"], "name":["Lotus Evija", "Rimac Concept Two", "Porsche Taycan"+"\n"+"                Turbo S", "Ford Mustang"+"\n"+"                Mach-E 1400"], "price":["2,500,000 CR", "2,000,000 CR", "185,000 CR", "750,000 CR"], "speed":["7.6", "9.1", "10", "5.6"], "handling":["7.9", "6.9", "7.8", "6.9"], "acceleration":["7.6", "9.9", "9.7", "7.3"], "launch":["8.5", "10", "10", "8.1"], "braking":["10", "9.3", "7.2", "8.4"], "offroad":["3.9", "4.4", "4.4", "4.2"]}
 
 S2_Class = {"banner":["./Project/Img/S2 Class.png"], "pic":["./Project/Img/KoenigseggJesko.png", "./Project/Img/MercedesAMGOne.png", "./Project/Img/HennesseyVenomF5.png", "./Project/Img/LamborghiniSestoElemento.png"], "name":["Koenigsegg Jesko", "Mercedes AMG One", "Hennessey Venom F5", "Lamborghini Sesto Elemento"], "price":["2,800,000 CR", "2,700,000 CR", "3,000,000 CR", "2,500,000 CR"], "priceNumber":[0, 0, 0, 0]}
 
@@ -51,8 +54,8 @@ def info(newWindow, data1, number):
     global Eco_Friendly_CarInfo
     newWindow.iconify()
     infoWindow = Toplevel(root)
-    infoWindow.geometry("1000x600+230+150")
-    buttonQuit = Button(infoWindow, text = "Quit", font=("Playfair Display", 18), fg="#1E1E1E", bg="#ECE8E7",  width=30, command=lambda:closewindow1(infoWindow, newWindow))
+    infoWindow.geometry("750x750+230+150")
+    buttonQuit = Button(infoWindow, text = "Exit", font=("Playfair Display", 18), fg="#1E1E1E", bg="#ECE8E7",  width=30, command=lambda:closewindow1(infoWindow, newWindow))
     buttonQuit.grid(pady=2, padx=5, column=1, row=0, columnspan=8)
     # Group 1
     spacing = Label(infoWindow, text="     ", font=("Playfair Display", 18))
@@ -86,14 +89,38 @@ def info(newWindow, data1, number):
     offroadLabel.grid(column=1, row=10, sticky=E)
 
     spacing = Label(infoWindow, text="                                    ", font=("Playfair Display", 19))
-    spacing.grid(pady=30, column=2, row=4, sticky=E)
+    spacing.grid(pady=30, column=2, row=4, columnspan=6, sticky=E)
+
+    df = pd.DataFrame({"Performance": ["Speed", "Handling", "Acceleration", "Launch", "Braking", "Offroad"], "Score": [float(data1["speed"][number]), float(data1["handling"][number]), float(data1["acceleration"][number]), float(data1["launch"][number]), float(data1["braking"][number]), float(data1["offroad"][number])]})
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection="polar")
+
+    theta = np.arange(len(df) + 1) / float(len(df)) * 2 * np.pi
+
+    values = df["Score"].values
+    values = np.append(values, values[0])
+
+    plt.xticks(theta[:-1], df["Performance"], color="grey", size=12)
+    ax.tick_params(pad=10)
+    ax.fill(theta, values, "green", alpha=0.1)
+
+    plt.title("Car Performance")
+    plt.savefig("./project/img/performanceChart.png")
+    plt.close()
+
+    img=Image.open("./Project/Img/performanceChart.png")
+    resized_performanceImg=img.resize((370,300))
+    global tk_performanceImg
+    tk_performanceImg=ImageTk.PhotoImage(resized_performanceImg)
+    performanceImglabel=Label(infoWindow, image=tk_performanceImg)
+    performanceImglabel.grid(column=3, row=6, rowspan=4, columnspan=6)
 
     img=Image.open(str(data1["pic"][number]))
     resized_CarInfoImg1=img.resize((500,300))
     global tk_CarInfoImg1
     tk_CarInfoImg1=ImageTk.PhotoImage(resized_CarInfoImg1)
     CarInfoImg1label=Label(infoWindow, image=tk_CarInfoImg1)
-    CarInfoImg1label.grid(column=3, row=2, rowspan=4, columnspan=3, sticky=E)
+    CarInfoImg1label.grid(column=3, row=1, rowspan=4, columnspan=4, sticky=E)
 
 
 
@@ -113,7 +140,7 @@ def new(data, dataInfo):
     logolabel.grid(column=0, row=0, sticky=W)
 
     #Buttons
-    buttonQuit = Button(newWindow, text = "Quit", font=("Playfair Display", 18), fg="#1E1E1E", bg="#ECE8E7", command=lambda:closewindow(newWindow))
+    buttonQuit = Button(newWindow, text = "Exit", font=("Playfair Display", 18), fg="#1E1E1E", bg="#ECE8E7", command=lambda:closewindow(newWindow))
     buttonQuit.grid(pady=2, padx=5, column=4, row=0, columnspan=2, sticky=E+W)
 
     #Row 1 Banner
@@ -310,14 +337,14 @@ def menu():
     total = subtotal1+subtotal2+subtotal3+subtotal4+subtotal5+subtotal6+subtotal7+subtotal8+subtotal9+subtotal10+subtotal11+subtotal12+subtotal13+subtotal14+subtotal15+subtotal16
     table.insert('',index='end',text='Total',values=['','', total], tags=('totalcolor'))
 
-    Buyoutbutton = Button(menuWindow, text="Buyout", font=("Playfair Display", 18, "bold"), width = 10, command=buyoutWindow)
+    Buyoutbutton = Button(menuWindow, text="Place Order", font=("Playfair Display", 18, "bold"), width = 10, command=buyoutWindow)
     Buyoutbutton.pack(side="bottom")
 
     table.pack()
 
     menuWindow.mainloop()
 
-def loginWindowfunction():
+def loginWindow():
     gc = pygsheets.authorize(service_file="Project/causal-scarab-383206-d3edf987cf5e.json")
     sht = gc.open_by_url("https://docs.google.com/spreadsheets/d/1mpgr_6vPS_pSIxFawYWXU9czJPpZq4Q-c9j7y5wlYHM/edit#gid=0")
     ws = sht[0]
@@ -411,11 +438,10 @@ def buyoutWindow():
     if userEmail == "":
         messagebox.showwarning("showwarning", "Please login first!")
     else:
-        text = MIMEText("內文")
-        
+        text = MIMEText("嗨！這是您在Forza Horizon Marketplace購買的賽車。請點擊附件裡的Excel檔案，確認你的購買清單及金額是否正確！")
         content = MIMEMultipart() 
         content.attach(part)
-        content["subject"] = "Forza Auction House Receipt" 
+        content["subject"] = "Forza Horizon Marketplace Receipt" 
         content["from"] = "louiechiang907@gmail.com" 
         content["to"] = userEmail
 
@@ -503,13 +529,13 @@ totalval.set("共消費: 0 CR")
 totallabel=Label(root, textvariable=totalval, font=("Inter", 18), fg="White")
 # totallabel.grid(column=1, row=0, columnspan=8, sticky=W+S)
 
-Menubutton=Button(root, text="Menu", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=menu)
+Menubutton=Button(root, text="Shopping Cart", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=menu)
 Menubutton.grid(column=1, row=1, pady=80, padx=50, sticky=N)
 
-quitbutton=Button(root, text="Quit", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=destroyWindow)
+quitbutton=Button(root, text="Exit", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=destroyWindow)
 quitbutton.grid(column=1, row=1, pady=80, padx=50, sticky=S)
 
-Loginbutton=Button(root, text="Login", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=loginWindowfunction)
+Loginbutton=Button(root, text="Login", font=("Playfair Display", 18, "bold"), fg="#1E1E1E", bg="#ECE8E7", height=2, width=10, command=loginWindow)
 Loginbutton.grid(column=1, row=1, pady=80, padx=50, sticky=W)
 
 root.mainloop()
